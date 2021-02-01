@@ -1,0 +1,16 @@
+{
+    "name": "SIRAM-SIS - Monitoring Penyiram Tanaman Otomatis",
+    "short_name": "SIRAM-SIS",
+    "description": "Aplikasi Monitoring Penyiram Tanaman Otomatis",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#00897B",
+    "theme_color": "#00897B",
+    "icons": [
+        {
+            "src": "./imgs/icon.png",
+            "sizes": "1300x1300",
+            "type": "image/png"
+        }
+    ]
+}

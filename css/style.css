@@ -1,0 +1,28 @@
+body{
+    text-align: center
+}
+
+h2 {
+    padding: 10px;
+}
+
+.left {
+    text-align: left;
+}
+
+.jarak {
+    padding: 0 25px 25px 25px;
+}
+
+.space-bottom {
+    margin-bottom: 30px;
+}
+
+.jarak {
+    padding-top: 15px;
+    margin-bottom: -40px;
+}
+
+a {
+    color: black;
+}
