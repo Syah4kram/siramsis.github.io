@@ -30,13 +30,13 @@ function getArticles() {
           var fog = " ";
           var valve = " ";
 
-          if(data.feeds[1].field1 == 1 ){
+          if(data.feeds[1].field1 == 0 ){
             hujan = "Tidak Hujan"
           } else {
-            hujan = "Hujan"
+            hujan = "Hujan <div class='show-on-small hid-green'>A</div>"
           }
           if(data.feeds[1].field2 == 1 ){
-            fog = "Berkabut"
+            fog = "Berkabut <div class='show-on-small hid-blue'>A</div>"
           } else {
             fog = "Tidak berkabut"
           }
@@ -46,32 +46,42 @@ function getArticles() {
             valve = "Tidak mengalir"
           }
 
+          var str = data.feeds[1].created_at;
+          var time = str.split("Z");
+          var datetime = moment(time[0]).add(7, 'hours').format('LLL');
+    
           articlesHTML += `
-            <h3>Keadaan</h3>
-            <a href="./datas.html?fields=1">
-              <div class="card green accent-2">
-              <h5 class="jarak">Apakah dalam keadaan hujan?</h5>
-              <div class="card-content">
-                <span>${hujan}</span>
-              </div>
-              </div>
-            </a>
-            <a href="./datas.html?fields=2">
-            <div class="card light-blue accent-4 white-text">
-            <h5 class="jarak">Apakah dalam keadaan berkabut?</h5>
-              <div class="card-content">
-                <span>${fog}</span>
-              </div>
+          <div class="dt">
+          <h5>${datetime}</h5>
+          </div>
+          <div class="row">
+          <a href="./datas.html?fields=1">
+            <div class="card-panel hoverable col s6 card green accent-2">
+            <div class="card-content">
+              <img class="responsive-img" src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather07-512.png">
+              <h5>${hujan}</h5>
             </div>
-            </a>
-            <a href="./datas.html?fields=4">
-            <div class="card red">
-            <h5 class="jarak white-text">Keadaan Valve</h5>
-              <div class="card-content white-text">
-                <span>${valve}</span>
-              </div>
             </div>
-            </a>
+          </a>
+          <a href="./datas.html?fields=2">
+          <div class="card-panel hoverable col s6 card light-blue accent-4 white-text">
+            <div class="card-content">
+            <img class="responsive-img" src="https://image.flaticon.com/icons/png/512/286/286588.png">
+              <h5>${fog}</h5>
+            </div>
+          </div>
+          </a>
+          
+          <a href="./datas.html?fields=4">
+          <div class="card-panel hoverable col s12 card red">
+          <div class="card-content white-text">
+          <div class="row valign-wrapper">
+            <div class="col s4"><h5>${valve}</h5></div>
+            <div class="col s8"><img class="responsive-img" src="http://www.myiconfinder.com/uploads/iconsets/256-256-eaecedd06b2d44901a0872870dbf3a58-faucet.png" width="125vw"></div>
+            </div>
+            </div>
+          </div>
+          </div>
                 `;
           document.getElementById("body-content").innerHTML = articlesHTML;
         });
@@ -88,13 +98,13 @@ function getArticles() {
       var fog = " ";
       var valve = " ";
 
-      if(data.feeds[1].field1 == 1 ){
+      if(data.feeds[1].field1 == 0 ){
         hujan = "Tidak Hujan"
       } else {
-        hujan = "Hujan"
+        hujan = "Hujan <div class='show-on-small hid-green'>A</div>"
       }
       if(data.feeds[1].field2 == 1 ){
-        fog = "Berkabut"
+        fog = "Berkabut <div class='show-on-small hid-blue'>A</div>"
       } else {
         fog = "Tidak berkabut"
       }
@@ -104,32 +114,41 @@ function getArticles() {
         valve = "Tidak mengalir"
       }
 
-          articlesHTML += `
-          <h3>Keadaan</h3>
-            <a href="./datas.html?fields=1">
-              <div class="card green accent-2">
-              <h5 class="jarak">Apakah dalam keadaan hujan?</h5>
-              <div class="card-content">
-                <span>${hujan}</span>
-              </div>
-              </div>
-            </a>
-            <a href="./datas.html?fields=2">
-            <div class="card light-blue accent-4 white-text">
-            <h5 class="jarak">Apakah dalam keadaan berkabut?</h5>
-              <div class="card-content">
-                <span>${fog}</span>
-              </div>
-            </div>
-            </a>
-            <a href="./datas.html?fields=4">
-            <div class="card red white-text">
-            <h5 class="jarak">Keadaan Valve</h5>
-              <div class="card-content white-text">
-                <span>${valve}</span>
-              </div>
-            </div>
-            </a>
+      var str = data.feeds[1].created_at;
+      var time = str.split("Z");
+      var datetime = moment(time[0]).add(7, 'hours').format('LLL');
+
+      articlesHTML += `
+      <div class="dt">
+      <h5>${datetime}</h5>
+      </div>
+        <div class="row">
+        <a href="./datas.html?fields=1">
+          <div class="card-panel hoverable col s6 card green accent-2">
+          <div class="card-content">
+            <img class="responsive-img" src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather07-512.png">
+            <h5>${hujan}</h5>
+          </div>
+          </div>
+        </a>
+        <a href="./datas.html?fields=2">
+        <div class="card-panel hoverable col s6 card light-blue accent-4 white-text">
+          <div class="card-content">
+          <img class="responsive-img" src="https://image.flaticon.com/icons/png/512/286/286588.png">
+            <h5>${fog}</h5>
+          </div>
+        </div>
+        </a>
+        <a href="./datas.html?fields=4">
+        <div class="card-panel hoverable col s12 card red">
+        <div class="card-content white-text">
+        <div class="row valign-wrapper">
+          <div class="col s4"><h5>${valve}</h5></div>
+          <div class="col s8"><img class="responsive-img" src="https://images.vexels.com/media/users/3/152689/isolated/preview/3a5bb70416239ee25c89a33d7bd190b2-water-shut-off-valve-icon-by-vexels.png" width="125vw"></div>
+          </div>
+          </div>
+        </div>
+        </div>
                 `;
       // Sisipkan komponen card ke dalam elemen dengan id #content
       document.getElementById("articles").innerHTML = articlesHTML;
