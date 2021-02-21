@@ -32,57 +32,59 @@ function getArticles() {
 
           if(data.feeds[1].field1 == 0 ){
             hujan = "Tidak Hujan"
+            hujan_url = "https://image.flaticon.com/icons/png/512/252/252035.png"
           } else {
             hujan = "Hujan <div class='show-on-small hid-green'>A</div>"
+            hujan_url = "https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather07-512.png"
           }
           if(data.feeds[1].field2 == 1 ){
             fog = "Berkabut <div class='show-on-small hid-blue'>A</div>"
+            fog_url = "https://static.vecteezy.com/system/resources/previews/000/583/433/non_2x/cloud-and-fog-icon-vector.jpg"
           } else {
             fog = "Tidak berkabut"
+            fog_url = "http://cdn.onlinewebfonts.com/svg/img_542346.png"
           }
           if(data.feeds[1].field3 == 1 ){
             valve = "Mengalir"
           } else {
             valve = "Tidak mengalir"
           }
-
+    
           var str = data.feeds[1].created_at;
           var time = str.split("Z");
           var datetime = moment(time[0]).add(7, 'hours').format('LLL');
     
           articlesHTML += `
           <div class="dt">
-          <h5>${datetime}</h5>
+            <h5>${datetime}</h5>
           </div>
           <div class="row">
-          <a href="./datas.html?fields=1">
-            <div class="card-panel hoverable col s6 card green accent-2">
-            <div class="card-content">
-              <img class="responsive-img" src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather07-512.png">
-              <h5>${hujan}</h5>
-            </div>
-            </div>
-          </a>
-          <a href="./datas.html?fields=2">
-          <div class="card-panel hoverable col s6 card light-blue accent-4 white-text">
-            <div class="card-content">
-            <img class="responsive-img" src="https://image.flaticon.com/icons/png/512/286/286588.png">
-              <h5>${fog}</h5>
+            <a href="./datas.html?fields=1">
+              <div class="card-panel hoverable col s6 card green accent-2">
+                <div class="card-content">
+                  <img class="responsive-img" src="${hujan_url}">
+                  <h5>${hujan}</h5>
+                </div>
+              </div>
+            </a>
+            <a href="./datas.html?fields=2">
+              <div class="card-panel hoverable col s6 card light-blue accent-4 white-text">
+                <div class="card-content">
+                  <img class="responsive-img" src="${fog_url}">
+                  <h5>${fog}</h5>
+                </div>
+              </div>
+            </a>
+            <div class="card-panel hoverable col s12 card red">
+              <div class="card-content white-text">
+                <div class="row valign-wrapper">
+                  <div class="col s4"><h5>${valve}</h5></div>
+                  <div class="col s8"><img class="responsive-img" src="https://images.vexels.com/media/users/3/152689/isolated/preview/3a5bb70416239ee25c89a33d7bd190b2-water-shut-off-valve-icon-by-vexels.png" width="125vw"></div>
+                </div>
+              </div>
             </div>
           </div>
-          </a>
-          
-          <a href="./datas.html?fields=4">
-          <div class="card-panel hoverable col s12 card red">
-          <div class="card-content white-text">
-          <div class="row valign-wrapper">
-            <div class="col s4"><h5>${valve}</h5></div>
-            <div class="col s8"><img class="responsive-img" src="http://www.myiconfinder.com/uploads/iconsets/256-256-eaecedd06b2d44901a0872870dbf3a58-faucet.png" width="125vw"></div>
-            </div>
-            </div>
-          </div>
-          </div>
-                `;
+                    `;
           document.getElementById("body-content").innerHTML = articlesHTML;
         });
       }
@@ -100,13 +102,17 @@ function getArticles() {
 
       if(data.feeds[1].field1 == 0 ){
         hujan = "Tidak Hujan"
+        hujan_url = "https://image.flaticon.com/icons/png/512/252/252035.png"
       } else {
         hujan = "Hujan <div class='show-on-small hid-green'>A</div>"
+        hujan_url = "https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather07-512.png"
       }
       if(data.feeds[1].field2 == 1 ){
         fog = "Berkabut <div class='show-on-small hid-blue'>A</div>"
+        fog_url = "https://static.vecteezy.com/system/resources/previews/000/583/433/non_2x/cloud-and-fog-icon-vector.jpg"
       } else {
         fog = "Tidak berkabut"
+        fog_url = "http://cdn.onlinewebfonts.com/svg/img_542346.png"
       }
       if(data.feeds[1].field3 == 1 ){
         valve = "Mengalir"
@@ -120,35 +126,34 @@ function getArticles() {
 
       articlesHTML += `
       <div class="dt">
-      <h5>${datetime}</h5>
+        <h5>${datetime}</h5>
       </div>
-        <div class="row">
+      <div class="row">
         <a href="./datas.html?fields=1">
           <div class="card-panel hoverable col s6 card green accent-2">
-          <div class="card-content">
-            <img class="responsive-img" src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather07-512.png">
-            <h5>${hujan}</h5>
-          </div>
+            <div class="card-content">
+              <img class="responsive-img" src="${hujan_url}">
+              <h5>${hujan}</h5>
+            </div>
           </div>
         </a>
         <a href="./datas.html?fields=2">
-        <div class="card-panel hoverable col s6 card light-blue accent-4 white-text">
-          <div class="card-content">
-          <img class="responsive-img" src="https://image.flaticon.com/icons/png/512/286/286588.png">
-            <h5>${fog}</h5>
+          <div class="card-panel hoverable col s6 card light-blue accent-4 white-text">
+            <div class="card-content">
+              <img class="responsive-img" src="${fog_url}">
+              <h5>${fog}</h5>
+            </div>
           </div>
-        </div>
         </a>
-        <a href="./datas.html?fields=4">
         <div class="card-panel hoverable col s12 card red">
-        <div class="card-content white-text">
-        <div class="row valign-wrapper">
-          <div class="col s4"><h5>${valve}</h5></div>
-          <div class="col s8"><img class="responsive-img" src="https://images.vexels.com/media/users/3/152689/isolated/preview/3a5bb70416239ee25c89a33d7bd190b2-water-shut-off-valve-icon-by-vexels.png" width="125vw"></div>
-          </div>
+          <div class="card-content white-text">
+            <div class="row valign-wrapper">
+              <div class="col s4"><h5>${valve}</h5></div>
+              <div class="col s8"><img class="responsive-img" src="https://images.vexels.com/media/users/3/152689/isolated/preview/3a5bb70416239ee25c89a33d7bd190b2-water-shut-off-valve-icon-by-vexels.png" width="125vw"></div>
+            </div>
           </div>
         </div>
-        </div>
+      </div>
                 `;
       // Sisipkan komponen card ke dalam elemen dengan id #content
       document.getElementById("articles").innerHTML = articlesHTML;
