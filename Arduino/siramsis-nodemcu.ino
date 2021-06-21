@@ -16,11 +16,9 @@ int fog_status_before = 0;
 int isFogTime = 0;
 int toSend = 0;
 
-String apiKey = "Y563W1GMENH8M9Z3";
-const char *ssid = "Wono_Home";
-const char *pass = "19451945OK";
-//const char *ssid = "Sy";
-//const char *pass = "12345678";
+String apiKey = "key apinya";
+const char *ssid = "WiFi Name";
+const char *pass = "password";
 const char* server = "api.thingspeak.com";
 
 WiFiClient client;
